@@ -45,7 +45,7 @@ const App = () => {
     setIsFacebook(true);
     const PROFILE_REQUEST_PARAMS = {
       fields: {
-        string: 'id, name,  first_name, last_name',
+        string: 'id, name,  first_name, last_name, picture.type(large)',
       },
     };
     const profileRequest = new GraphRequest(
@@ -178,7 +178,7 @@ const App = () => {
               <Image
                 style={styles.logo}
                 source={{
-                  uri: `http://graph.facebook.com/${fbUserInfo.id}/picture?type=large`,
+                  uri: `https://graph.facebook.com/${fbUserInfo.id}/picture?type=normal`,
                 }}
               />
               <Text style={{fontWeight: 'bold', fontSize: 20, marginTop: 20}}>
